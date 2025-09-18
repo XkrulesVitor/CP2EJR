@@ -1,0 +1,318 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #202024;
+  color: #FFFFFF;
+  font-size: 14px;
+  font-family: "Roboto", sans-serif;
+  line-height: 160%;
+}
+
+.CABEÇALHO{
+  background-color: #121214;
+  padding: 40px 0 150px;
+}
+.CABEÇALHO_ELEMENTOS{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0px 50px 0;
+}
+.CABEÇALHO .nova_transação{
+  cursor: pointer;
+  color: #FFFFFF;
+  font-size: 16px;
+  background-color: #FAAE2B;
+  padding: 16px;
+  border-radius: 6px;
+  font-weight: bold;
+}
+
+.RESUMO{
+  display: flex;
+  gap: 32px;
+  margin: -70px 50px 50px; 
+}
+.RESUMO .CARD{
+  background-color: #323238;
+  font-size: 16px;
+  padding: 32px;
+  border-radius: 6px;
+  flex: 1;
+}
+.RESUMO .CARD header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin:-14px auto 32px;
+}
+.RESUMO .TOTAL{
+  background-color: #FAAE2B;
+}
+.RESUMO .valor{
+  font-weight: bold;
+  font-size: 32px;
+}
+.RESUMO .mobile_resumo{
+  display: none;
+}
+
+.PESQUISA form{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 50px 32px;
+  font-size: 16px;
+  gap: 18px;
+}
+.PESQUISA input{
+  background-color: #121214;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  flex: 1;
+}
+.PESQUISA input::placeholder{
+  color: #FFFFFF;
+  opacity: 1;
+}
+.PESQUISA button{
+  background-color: transparent;
+  border: 1px solid #FAAE2B;
+  Color: #FAAE2B;
+  align-items: center;
+  cursor: pointer;
+  border-radius: 6px;
+  padding: 12px 24px;
+  display: flex;
+  gap: 12px;
+}
+.PESQUISA .mobile_pesquisa{
+  display: none;
+}
+
+.TABELA{
+  margin: 32px 50px 32px;
+}
+.TABELA .TRANSAÇÃO{
+  background-color: #29292E;
+  list-style: none;
+  display: flex;
+  padding: 24px 32px;
+  margin-top: 8px;
+  border-radius: 6px;
+  justify-content: space-between;
+}
+.TRANSAÇÃO .titulo{
+  flex: 1;
+}
+.TRANSAÇÃO .comum{
+  width: 200px;
+}
+.TRANSAÇÃO .valor_positivo{
+  color: #00B37E;
+}
+.TRANSAÇÃO .valor_negativo{
+  color: #F75A68
+}
+.LAYOUT{
+  display: flex;
+  width: 400px;
+}
+.LAYOUT .categoria{
+  width: 200px;
+}
+.TRANSAÇÃO .mobile_ícone{
+  display: none;
+}
+
+.POP-UP{
+  position: fixed;
+  top: 0; 
+  left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.POP-UP.abrir{
+  opacity: 1;
+  visibility: visible;
+}
+.POP-UP .MODAL{
+  background: #202024;
+  padding: 48px;
+  border-radius: 6px;
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+}
+.POP-UP .MODAL .titulo{
+  font-size: 24px;
+  font-weight: bold;
+}
+.POP-UP .botão_fechar{
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 15px;
+  cursor: pointer;
+}
+.POP-UP form{
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.POP-UP form input[type="number"]::-webkit-inner-spin-button{
+  -webkit-appearance: none;
+}
+.POP-UP form input {
+  background-color: #121214;
+  color: #FFFFFF;           
+  border: none;
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 16px;
+}
+.POP-UP form input::placeholder{
+  color: #FFFFFF;
+  opacity: 1;
+}
+.POP-UP .tipo{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  gap:12px;
+}
+.POP-UP form .botão_tipo{
+  font-size: 16px;
+  background: #29292E;
+  color: white;
+  border: 0;
+  cursor: pointer;
+  display: flex;
+  gap: 8px;
+  flex:1;
+  justify-content: center;
+  align-items: center;
+  padding:16px; 
+  border-radius: 6px;
+}
+.POP-UP form .botão_tipo img{
+  width: 24px;
+}
+.POP-UP form .botão_cadastrar{
+  background: #FAAE2B;
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  margin-top: 12px;
+  border:0;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.CABEÇALHO .nova_transação:active,
+.PESQUISA button:active,
+.POP-UP button:active 
+{
+  transform: scale(0.9);
+  filter: brightness(0.8);
+  transition: transform 0.1s;
+}
+
+@media (max-width: 768px){
+  *{
+    font-size: 16px;
+  }
+  .CABEÇALHO_ELEMENTOS{
+    margin: auto 32px auto;
+  }
+  .CABEÇALHO .nova_transação{
+    margin: auto -12px auto;
+    padding:  16px 32px;
+  }
+
+  .RESUMO{
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 16px;
+    margin: -90px 0 0;
+    overflow-x: auto;
+    padding: 0 24px;
+  }
+  .RESUMO .CARD{
+    min-width: 380px;
+  }
+  .RESUMO .CARD header{
+  display: flex;
+  justify-content: space-between;
+  } 
+  .RESUMO .valor{
+  font-size: 24px;
+  }
+  .RESUMO .mobile_resumo{
+    margin-top: 8px;
+    font-size: 14px;
+    display:flex;
+  }
+
+  .PESQUISA .mobile_pesquisa{
+    display: flex;
+    justify-content: space-between;
+    margin: 32px 32px auto;
+  }
+  .PESQUISA .mobile_pesquisa .introdução{
+    font-size: 18px;
+  }
+  .PESQUISA form{
+    gap: 10px;
+    margin: 24px;
+  }
+  .PESQUISA button{
+    padding: 12px 16px;
+  }
+  .PESQUISA button span{
+    display: none;
+  }
+
+  .TABELA{
+  margin: 24px;
+  }
+  .TABELA .TRANSAÇÃO{
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+  }
+  .TABELA .LAYOUT{
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+  }
+  .LAYOUT .categoria{
+    display: flex;
+    gap:4px;
+  }
+  .LAYOUT .data{
+    display: flex;
+    gap:4px;
+  }
+  .LAYOUT .mobile_ícone{
+    display: flex;
+    width: 20px;
+  }
+
+}
